@@ -35,7 +35,7 @@ More accurate analysis still need to be performed in order to guarantee the whol
 3. ### ARP Module Injection Steps
     - Clone the repository: ```git clone https://github.com/mircocazzaro/dremio-polypheny-arp.git```;
     - Copy the plugin into the Docker container: ```docker cp /path/to/dremio-polypheny-arp/target/dremio-polypheny-plugin-24.3.2-202401241821100032-d2d8a497.jar <CONTAINER_NAME>:/opt/dremio/jars/```;
-    - Copy the Polypheny JDBC driver into the Docker container: ```docker cp /path/to/dremio-polypheny-arp/jdbc/polypheny-jdbc-driver-1.5.3.jar```;
+    - Copy the Polypheny JDBC driver into the Docker container: ```docker cp /path/to/dremio-polypheny-arp/jdbc/polypheny-jdbc-driver-1.5.3.jar <CONTAINER_NAME>:/opt/dremio/jars/3rdparty/```;
     - Restart the Docker container.
 
 4. ### Usage Steps
