@@ -64,6 +64,14 @@ public class PolyphenyConf extends AbstractArpConf<PolyphenyConf> {
 //  @JsonIgnore
 //  public boolean enableExternalQuery = false;
 
+  @Tag(6)
+  @DisplayMetadata(label = "Polypheny User Name")
+  public String username = "pa";
+
+  @Tag(7)
+  @DisplayMetadata(label = "Polypheny Password")
+  public String password = "";
+
   @Tag(4)
   @DisplayMetadata(label = "Maximum idle connections")
   @NotMetadataImpacting
@@ -99,7 +107,7 @@ public class PolyphenyConf extends AbstractArpConf<PolyphenyConf> {
 
   private CloseableDataSource newDataSource() {
     return DataSources.newGenericConnectionPoolDataSource(DRIVER,
-      toJdbcConnectionString(), "pa", "", null, DataSources.CommitMode.DRIVER_SPECIFIED_COMMIT_MODE,
+      toJdbcConnectionString(), username, password, null, DataSources.CommitMode.DRIVER_SPECIFIED_COMMIT_MODE,
             maxIdleConns, idleTimeSec);
   }
 
